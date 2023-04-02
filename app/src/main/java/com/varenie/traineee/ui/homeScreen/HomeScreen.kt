@@ -144,11 +144,6 @@ fun WorkoutItem(
             .aspectRatio(6f)
             .clip(RoundedCornerShape(10.dp))
             .background(ButtonBlue.copy(alpha = 0.5F))
-//        modifier = Modifier
-//            .padding(7.5.dp)
-////            .aspectRatio(11f)
-//            .clip(RoundedCornerShape(10.dp))
-//            .background(ButtonBlue.copy(alpha = 0.5F))
     ) {
         Text(
             text = item.workoutName,
