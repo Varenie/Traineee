@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -27,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.toBitmap
+import com.varenie.traineee.R
 import com.varenie.traineee.ui.homeScreen.WorkoutContent
 import com.varenie.traineee.ui.theme.BlueViolet1
 import com.varenie.traineee.ui.theme.ButtonBlue
@@ -49,6 +51,18 @@ fun WorkoutScreen(
             ExerciseContent("Test5", "some description"),
             ExerciseContent("Test6", "some description"),
         ))
+
+        FloatingActionButton(
+            modifier = Modifier
+                .padding(end = 16.dp, bottom = 16.dp)
+                .align(Alignment.BottomEnd),
+            backgroundColor = ButtonBlue,
+            onClick = { /*TODO*/ }) {
+            Icon(
+                painter = painterResource(id = R.drawable.ic_add),
+                contentDescription = "add button"
+            )
+        }
     }
 }
 

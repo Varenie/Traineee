@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.varenie.traineee.ui.ExerciseParametersScreen.ExerciseParametersScreen
 import com.varenie.traineee.ui.WorkoutScreen.WorkoutScreen
 import com.varenie.traineee.ui.homeScreen.HomeScreen
 import com.varenie.traineee.ui.homeScreen.WorkoutContent
@@ -19,7 +20,8 @@ class MainActivity : ComponentActivity() {
             TraineeeTheme {
                 // A surface container using the 'background' color from the theme
 //                HomeScreen()
-                WorkoutScreen(/*item = WorkoutContent("hands", 8)*/)
+//                WorkoutScreen(/*item = WorkoutContent("hands", 8)*/)
+                ExerciseParametersScreen()
             }
         }
     }
