@@ -20,7 +20,8 @@ fun ExerciseParametersScreen() {
         ParameterContent(0, "icon", ParameterType.IMAGE, icon = convertToBitmap(null, LocalContext.current)),
         ParameterContent(1, "textTest", ParameterType.TEXT),
         ParameterContent(2, "flagTest", ParameterType.FLAG),
-        ParameterContent(3, "optionsTest", ParameterType.CHOICE, options = listOf("test1", "test2", "test3", "test4", "test5", "test6"))
+        ParameterContent(3, "optionsTest", ParameterType.CHOICE, options = listOf("test1", "test2", "test3", "test4", "test5", "test6")),
+        ParameterContent(4,"exercise count", ParameterType.COUNT)
     )
     Scaffold(
         topBar = {},

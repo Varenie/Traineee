@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -15,6 +16,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
 
@@ -26,12 +28,15 @@ fun ParameterItemCompose(item: ParameterContent) {
         ParameterType.FLAG -> CheckBoxParameter(label = item.name)
         ParameterType.CHOICE -> DropdownMenuParameter(label = item.name, options = item.options!!)
         ParameterType.IMAGE -> IconParameter(icon = item.icon!!)
+        ParameterType.COUNT -> TextParameter(label = item.name, isNumeric = true)
     }
 }
 
 @Composable
-private fun TextParameter(label: String) {
+private fun TextParameter(label: String, isNumeric: Boolean = false) {
     val text = remember { mutableStateOf("") }
+    val keyboardType = if (isNumeric) KeyboardType.Number
+                        else KeyboardType.Text
 
     OutlinedTextField(
         value = text.value,
@@ -39,7 +44,8 @@ private fun TextParameter(label: String) {
         onValueChange = { text.value = it},
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 16.dp, end = 16.dp, top = 3.dp)
+            .padding(start = 16.dp, end = 16.dp, top = 3.dp),
+        keyboardOptions = KeyboardOptions(keyboardType = keyboardType)
     )
 }
 
